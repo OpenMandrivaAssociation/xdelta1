@@ -1,14 +1,13 @@
-%define version 1.1.3
-%define release 2mdk
+%define version 1.1.4
+%define release %mkrel 1
 %define name xdelta1
 
 Summary: A binary delta generator
 Name:	%{name}
 Version: %{version}
 Release: %{release}
-Source0: ftp://www.xcf.berkeley.edu/pub/xdelta/xdelta-%{version}.tar.bz2
-Patch0: xdelta-1.1.3-64bit-fixes.patch.bz2
-URL:	http://www.cs.berkeley.edu/~jmacd/xdelta.html
+Source0: http://xdelta.googlecode.com/files/xdelta-%{version}.tar.bz2
+URL:	http://xdelta.org
 #(deush) path to emacs site lisp top dir
 License: GPL
 Group: File tools
@@ -39,7 +38,6 @@ required to develop applications using Xdelta.
 
 %prep
 %setup -q -n xdelta-%{version}
-%patch0 -p1 -b .64bit-fixes
 
 %build
 %ifarch alpha
