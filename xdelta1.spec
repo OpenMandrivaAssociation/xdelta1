@@ -8,7 +8,8 @@ Version: %{version}
 Release: %{release}
 Source0: http://xdelta.googlecode.com/files/xdelta-%{version}.tar.bz2
 URL:	http://xdelta.org
-#(deush) path to emacs site lisp top dir
+# (fc) 1.1.4-2mdv fix aclocal warning (upstream issue #49)
+Patch0:	xdelta-1.1.4-underquoted.patch
 License: GPL
 Group: File tools
 BuildRequires: emacs-bin glib-devel zlib-devel
@@ -38,14 +39,14 @@ required to develop applications using Xdelta.
 
 %prep
 %setup -q -n xdelta-%{version}
+%patch0 -p1 -b .underquoted
 
 %build
 %ifarch alpha
 automake
 %endif
 
-CFLAGS="$RPM_OPT_FLAGS" CXXFLAGS="$RPM_OPT_FLAGS" \
-%configure --disable-shared
+%configure2_5x --disable-shared
 %make all
 cd libedsio 
 emacs -batch -q -f batch-byte-compile edsio.el
