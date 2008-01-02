@@ -13,6 +13,7 @@ Patch0:	xdelta-1.1.4-underquoted.patch
 License: GPL
 Group: File tools
 BuildRequires: emacs-bin glib-devel zlib-devel
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 %description 
 XDelta is a library interface and application program designed to
