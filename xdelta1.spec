@@ -1,5 +1,5 @@
 %define version 1.1.4
-%define release %mkrel 4
+%define release %mkrel 5
 %define name xdelta1
 
 Summary: A binary delta generator
