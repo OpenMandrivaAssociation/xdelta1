@@ -7,7 +7,7 @@ Name:	%{name}
 Version: %{version}
 Release: %{release}
 Source0: http://xdelta.googlecode.com/files/xdelta-%{version}.tar.bz2
-URL:	http://xdelta.org
+URL:	https://xdelta.org
 # (fc) 1.1.4-2mdv fix aclocal warning (upstream issue #49)
 Patch0:	xdelta-1.1.4-underquoted.patch
 License: GPL
